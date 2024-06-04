@@ -1,6 +1,11 @@
 ## FindBook
 
-FindBook é uma aplicação web que ajuda você a encontrar o livros.
+FindBook é uma aplicação web para apaixonados por livros.
+
+- Pesquise por livros
+- Navegue por categorias
+- Receba recomendações
+- Visualize informações detalhadas sobre cada livro
 
 ## Começando
 
@@ -33,4 +38,5 @@ yarn dev
 
 ## Créditos
 
-Esse projeto foi desenvolvido durante a 4ª **Semana do Herói**, da [Alexxia Kattah](https://github.com/alexiakattah).
+Esse projeto foi desenvolvido durante a 4ª edição da **Semana do Herói**, da [Alexxia Kattah](https://github.com/alexiakattah).
+
