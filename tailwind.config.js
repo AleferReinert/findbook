@@ -4,14 +4,12 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				header: `url('./src/assets/img/background-header.png')`
-			},
-			colors: {
-				'evergreen': '#2B4341',
-				'evergreen-light': '#2AA78D'
+				header: `url('./src/assets/img/background-header.png')`,
+				float: `url('./src/assets/img/float-header.png')`
 			},
 			boxShadow: {
-				default: '0 0 15px rgba(0,0,0,0.19)'
+				default: '0 0 15px rgba(0,0,0,0.19)',
+				button: '3px 4px 8px rgba(0,0,0,0.17)'
 			}
 		}
 	},

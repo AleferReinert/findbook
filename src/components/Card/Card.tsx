@@ -24,7 +24,7 @@ export default function Card({ id, image, title, author, tag, synopsis }: CardPr
 				<img src={image} alt='Book cover' width='182' height='258' className='bg-slate-100 text-center' />
 			</div>
 			<div>
-				<h3 className='text-xl text-evergreen mt-3 font-bold'>{title}</h3>
+				<h3 className='text-xl text-gray-700 mt-3 font-bold'>{title}</h3>
 				<p className='text-xs text-neutral-500'>{author}</p>
 				<Tag title={tag} />
 				<p className='text-black text-xs mb-4'>

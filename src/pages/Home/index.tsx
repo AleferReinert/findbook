@@ -31,7 +31,7 @@ export function HomePage() {
 				<Heading title='O que você quer ler hoje?' />
 
 				<div className='flex gap-3 lg:gap-12 flex-wrap'>
-					{categories.map((category, index) => (
+					{categories.sort().map((category, index) => (
 						<Button
 							key={index}
 							filled={selectedCategories.includes(category)}
@@ -48,7 +48,7 @@ export function HomePage() {
 				<div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-11 mb-11'>
 					<Card
 						id='asd'
-						image='xuxu.png'
+						image='/example-cover.png'
 						title='O Código Limpo'
 						author='Robert C. Martin'
 						tag='Computer Engineer'

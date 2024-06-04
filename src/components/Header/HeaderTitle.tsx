@@ -1,3 +1,7 @@
 export function HeaderTitle() {
-	return <h1 className='font-bold text-3xl text-black py-4'>FindBook</h1>
+	return (
+		<a className='font-bold text-3xl text-black py-4 inline-block' href='/'>
+			FindBook
+		</a>
+	)
 }

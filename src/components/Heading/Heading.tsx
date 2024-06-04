@@ -4,7 +4,7 @@ interface HeadingProps {
 }
 
 export function Heading({ title, level = 'h2' }: HeadingProps) {
-	const commonStyles = 'text-evergreen font-bold '
+	const commonStyles = 'text-gray-700 font-bold '
 
 	return (
 		<div>
@@ -12,7 +12,7 @@ export function Heading({ title, level = 'h2' }: HeadingProps) {
 				<h2
 					className={
 						commonStyles +
-						'text-2xl md:text-4xl border-b-4 border-evergreen-light w-fit mt-11 mb-6 md:mb-8 lg:mb-16'
+						'text-2xl md:text-4xl border-b-4 border-emerald-500 w-fit mt-11 mb-6 md:mb-8 lg:mb-16'
 					}
 				>
 					{title}
