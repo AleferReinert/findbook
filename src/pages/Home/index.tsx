@@ -1,10 +1,11 @@
 import { useCallback, useState } from 'react'
+import { books } from '../../assets/mock/books'
 import { Button } from '../../components/Button/Button'
-import Card from '../../components/Card/Card'
 import { Container } from '../../components/Container/Container'
 import { Header } from '../../components/Header/Header'
 import { Heading } from '../../components/Heading/Heading'
 import { Input } from '../../components/Input/Input'
+import { SectionBookList } from '../../components/SectionBookList/SectionBookList'
 
 const categories = ['Comédia', 'Drama', 'Romance', 'Suspense', 'Auto ajuda']
 
@@ -30,11 +31,12 @@ export function HomePage() {
 			<Container>
 				<Heading title='O que você quer ler hoje?' />
 
-				<div className='flex gap-3 lg:gap-12 flex-wrap'>
+				<div className='flex gap-2 flex-wrap'>
 					{categories.sort().map((category, index) => (
 						<Button
 							key={index}
-							filled={selectedCategories.includes(category)}
+							size='small'
+							selected={selectedCategories.includes(category)}
 							onClick={() => handleSelectCategories(category)}
 						>
 							{category}
@@ -42,20 +44,15 @@ export function HomePage() {
 					))}
 				</div>
 
-				<Heading level='h3' title='Sobre o que você gostaria de receber uma recomendação de livro?' />
+				<label
+					className='text-gray-700 font-bold text-xl mt-5 lg:mt-10 mb-5 block'
+					htmlFor='recommendation-field'
+				>
+					Sobre o que você gostaria de receber uma recomendação?
+				</label>
 				<Input placeholder='Eu gostaria de ler...' />
-				<Heading title='Livros recomendados' />
-				<div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-11 mb-11'>
-					<Card
-						id='asd'
-						image='/example-cover.png'
-						title='O Código Limpo'
-						author='Robert C. Martin'
-						tag='Computer Engineer'
-						synopsis='lorem ipsum dolor'
-					/>
-				</div>
 			</Container>
+			<SectionBookList title='Recomendados' books={books} />
 		</>
 	)
 }

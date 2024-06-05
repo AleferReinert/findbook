@@ -7,10 +7,14 @@ interface InputProps {
 export const Input = forwardRef<HTMLInputElement, InputProps>(({ placeholder, ...rest }: InputProps, ref) => {
 	return (
 		<input
+			id='recommendation-field'
 			ref={ref}
 			type='text'
 			placeholder={placeholder}
-			className='text-neutral-500 text-xl py-4 px-7 mb-5 rounded-2xl w-full shadow-default outline-none'
+			className='
+				text-neutral-500 bg-transparent placeholder-current text-base py-3 px-2 mb-5 w-full outline-none border border-neutral-500
+				sm:px-5
+			'
 			{...rest}
 		/>
 	)

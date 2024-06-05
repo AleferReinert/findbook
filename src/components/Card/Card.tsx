@@ -19,20 +19,24 @@ export default function Card({ id, image, title, author, tag, synopsis }: CardPr
 	}, [id, navigate])
 
 	return (
-		<div className='rounded-2xl shadow-default py-3 px-4 sm:flex gap-5'>
-			<div>
-				<img src={image} alt='Book cover' width='182' height='258' className='bg-slate-100 text-center' />
+		<div className='bg-white p-3 gap-3 grid grid-cols-[35%_auto] sm:p-5 md:gap-4'>
+			<div className='flex items-center lg:items-start'>
+				<img src={image} alt='Book cover' className='bg-slate-100 text-center mx-auto max-h-min' />
 			</div>
-			<div>
-				<h3 className='text-xl text-gray-700 mt-3 font-bold'>{title}</h3>
-				<p className='text-xs text-neutral-500'>{author}</p>
-				<Tag title={tag} />
-				<p className='text-black text-xs mb-4'>
-					<strong>Sinopse:</strong> {synopsis}
-				</p>
-				<Button size='small' onClick={handleSeledctBook}>
-					Ver mais
-				</Button>
+			<div className='flex justify-between flex-col'>
+				<div>
+					<h3 className='text-base sm:text-xl text-gray-700 font-bold'>{title}</h3>
+					<p className='text-sm text-neutral-500'>{author}</p>
+					<Tag title={tag} />
+					<p className='text-black text-sm mb-4'>
+						<strong className='font-semibold'>Sinopse:</strong> {synopsis}
+					</p>
+				</div>
+				<div className='flex justify-end'>
+					<Button size='small' onClick={handleSeledctBook}>
+						Ver mais
+					</Button>
+				</div>
 			</div>
 		</div>
 	)

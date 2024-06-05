@@ -1,25 +1,15 @@
 interface HeadingProps {
 	title: string
-	level?: 'h1' | 'h2' | 'h3'
 }
 
-export function Heading({ title, level = 'h2' }: HeadingProps) {
-	const commonStyles = 'text-gray-700 font-bold '
-
+export function Heading({ title }: HeadingProps) {
 	return (
-		<div>
-			{level === 'h2' && (
-				<h2
-					className={
-						commonStyles +
-						'text-2xl md:text-4xl border-b-4 border-emerald-500 w-fit mt-11 mb-6 md:mb-8 lg:mb-16'
-					}
-				>
-					{title}
-				</h2>
-			)}
-
-			{level === 'h3' && <h3 className={commonStyles + 'text-xl md:text-3xl mt-16 mb-6'}>{title}</h3>}
-		</div>
+		<h2
+			className='
+				text-gray-700 font-bold text-2xl border-b-4 border-emerald-500 w-fit mt-11 mb-6 pb-1
+				md:text-3xl md:mb-8'
+		>
+			{title}
+		</h2>
 	)
 }
