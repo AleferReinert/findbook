@@ -2,8 +2,8 @@
 
 FindBook é uma aplicação web para apaixonados por livros.
 
-- Pesquise por livros
 - Navegue por categorias
+- Pesquise por livros
 - Receba recomendações
 - Visualize informações detalhadas sobre cada livro
 
@@ -11,23 +11,30 @@ FindBook é uma aplicação web para apaixonados por livros.
 
 1. Clone o repositório:
 
-```bash
+```
 git clone https://github.com/aleferreinert/findbook.git
 ```
 
-2. Instale as dependências:
+2. Crie as variáveis de ambiente:
 
-```bash
+```
+# .env
+VITE_BASE_URL = 'http://localhost:3333'
+```
+
+3. Instale as dependências:
+
+```
 yarn install
 ```
 
-3. Inicie o servidor de desenvolvimento:
+4. Inicie o servidor de desenvolvimento:
 
-```bash
+```
 yarn dev
 ```
 
-4. Abra [http://localhost:5173](http://localhost:5173) no seu navegador.
+5. Abra [http://localhost:5173](http://localhost:5173) no seu navegador.
 
 ## Tecnologias Utilizadas
 
@@ -38,5 +45,5 @@ yarn dev
 
 ## Créditos
 
-Esse projeto foi desenvolvido durante a 4ª edição da **Semana do Herói**, da [Alexxia Kattah](https://github.com/alexiakattah).
+Esse projeto foi desenvolvido durante a 4ª edição da **Semana do Herói**, da [Alexia Kattah](https://github.com/alexiakattah).
 

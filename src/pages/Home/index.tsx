@@ -1,16 +1,17 @@
-import { useCallback, useState } from 'react'
-import { books } from '../../assets/mock/books'
+import { useCallback, useContext, useState } from 'react'
 import { Button } from '../../components/Button/Button'
 import { Container } from '../../components/Container/Container'
 import { Header } from '../../components/Header/Header'
 import { Heading } from '../../components/Heading/Heading'
 import { Input } from '../../components/Input/Input'
 import { SectionBookList } from '../../components/SectionBookList/SectionBookList'
+import { BooksContext } from '../../contexts/booksContext'
 
 const categories = ['Comédia', 'Drama', 'Romance', 'Suspense', 'Auto ajuda']
 
 export function HomePage() {
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+	const { books, setBooks } = useContext(BooksContext)
 
 	const handleSelectCategories = useCallback(
 		(category: string) => {
@@ -50,7 +51,11 @@ export function HomePage() {
 				>
 					Sobre o que você gostaria de receber uma recomendação?
 				</label>
-				<Input placeholder='Eu gostaria de ler...' />
+				<Input
+					placeholder='Eu gostaria de ler...'
+					setBooks={setBooks}
+					selectedCategories={selectedCategories}
+				/>
 			</Container>
 			<SectionBookList title='Recomendados' books={books} />
 		</>

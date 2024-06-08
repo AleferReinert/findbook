@@ -1,25 +1,12 @@
-import { useCallback } from 'react'
-
-interface TagProps {
+interface CategoryTagProps {
 	title: string
+	size?: 'small' | 'normal'
 }
 
-export function Tag({ title }: TagProps) {
-	// Cores aleatórias para background e texto
-	const randomColors = useCallback(() => {
-		const hue = Math.floor(Math.random() * 360)
-		const lightness = `hsl(${hue}, 100%, 92%)`
-		const darkness = `hsl(${hue}, 100%, 10%)`
+export function CategoryTag({ title, size = 'small' }: CategoryTagProps) {
+	const commonStyles = 'bg-emerald-100 text-emerald-700 rounded-2xl font-medium w-fit my-2 sm:my-4'
+	const sizeSmallStyles = 'text-xxs px-2 py-1  '
+	const sizeNormalStyles = 'text-xs px-3 py-2 '
 
-		return { lightness, darkness }
-	}, [])
-
-	return (
-		<p
-			style={{ backgroundColor: randomColors().lightness, color: randomColors().darkness }}
-			className='rounded-xl text-xxs font-medium w-fit px-2 py-1 my-2 sm:my-4'
-		>
-			{title}
-		</p>
-	)
+	return <p className={(size === 'small' ? sizeSmallStyles : sizeNormalStyles) + commonStyles}>{title}</p>
 }
