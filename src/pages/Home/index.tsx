@@ -13,6 +13,7 @@ const categories = ['Comédia', 'Drama', 'Romance', 'Suspense', 'Autoajuda']
 
 export function HomePage() {
 	const [search, setSearch] = useState('')
+	// const [status, setStatus] = useState('')
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([])
 	const { books, setBooks } = useContext(BooksContext)
 
@@ -36,7 +37,6 @@ export function HomePage() {
 				1. Solicitação do usuário: ${search}.
 				2. Categorias que o usuário deseja:  ${selectedCategories.length ? selectedCategories : 'qualquer uma'}.
 			`
-			console.log(searchBooksPrompt)
 			const response = await searchBooks(searchBooksPrompt)
 			setBooks(response)
 		},

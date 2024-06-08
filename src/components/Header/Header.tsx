@@ -3,6 +3,10 @@ import { Container } from '../Container/Container'
 import { Logo } from '../Logo/Logo'
 
 export function Header() {
+	function setSearchFocus() {
+		const input = document.getElementById('recommendation-field')
+		input?.focus()
+	}
 	return (
 		<header className='bg-header bg-center bg-cover bg-no-repeat relative '>
 			<Container>
@@ -18,7 +22,9 @@ export function Header() {
 						Encontre livros que <br /> sejam a sua cara!
 					</h1>
 					<p className='text-neutral-500 text-xl mb-10'>Lorem ipsum dolor sit amet.</p>
-					<Button filled>Pesquisar livros</Button>
+					<Button filled onClick={setSearchFocus}>
+						Pesquisar livros
+					</Button>
 				</div>
 				<div
 					className='

@@ -19,28 +19,31 @@ interface SectionBookListProps {
 
 export function SectionBookList({ title, books }: SectionBookListProps) {
 	return (
-		books &&
-		books.length > 0 && (
-			<>
-				<Container>
-					<Heading title={title} />
+		<Container>
+			<section className='mb-11'>
+				<Heading title={title} />
 
+				{books && books.length > 0 ? (
 					<ul className='grid gap-3 mb-11 lg:grid-cols-2 lg:gap-5 xl:grid-cols-3'>
-						{books.map((book, index) => (
-							<li key={index} className='flex'>
-								<Card
-									id={book._id}
-									image={book.thumbnailUrl}
-									title={book.title}
-									author={book.authors[0]}
-									category={book.categories[0]}
-									synopsis={book.shortDescription}
-								/>
-							</li>
-						))}
+						{books &&
+							books.length > 0 &&
+							books.map((book, index) => (
+								<li key={index} className='flex'>
+									<Card
+										id={book._id}
+										image={book.thumbnailUrl}
+										title={book.title}
+										author={book.authors[0]}
+										category={book.categories[0]}
+										synopsis={book.shortDescription}
+									/>
+								</li>
+							))}
 					</ul>
-				</Container>
-			</>
-		)
+				) : (
+					<p>Nenhum livro encontrado.</p>
+				)}
+			</section>
+		</Container>
 	)
 }
