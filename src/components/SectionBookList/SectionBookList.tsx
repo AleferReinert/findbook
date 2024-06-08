@@ -19,6 +19,7 @@ interface SectionBookListProps {
 
 export function SectionBookList({ title, books }: SectionBookListProps) {
 	return (
+		books &&
 		books.length > 0 && (
 			<>
 				<Container>
