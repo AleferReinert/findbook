@@ -19,7 +19,8 @@ export const Search = forwardRef<HTMLInputElement, SearchProps>(
 					placeholder={placeholder}
 					value={search}
 					className='
-					transition text-neutral-500 bg-transparent placeholder-current text-base py-3 pl-2 pr-12 w-full outline-none border border-neutral-500 
+					transition text-gray-700 placeholder-gray-500 bg-slate-200 placeholder-current text-base py-3 pl-2 pr-12 w-full outline-none border border-slate-200 
+					focus:placeholder-gray-700
 					sm:pl-5
 					'
 					{...props}

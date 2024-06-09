@@ -4,34 +4,38 @@ import { Logo } from '../Logo/Logo'
 
 export function Header() {
 	function setSearchFocus() {
+		const label = document.getElementById('recommendation-label')
 		const input = document.getElementById('recommendation-field')
-		input?.focus()
+		label?.scrollIntoView({ behavior: 'smooth' })
+		setTimeout(() => input?.focus(), 200)
 	}
+
 	return (
-		<header className='bg-header bg-center bg-cover bg-no-repeat relative '>
+		<header
+			className='
+			bg-header bg-center bg-cover bg-no-repeat relative 
+			before:absolute before:inset-0 before:bg-black/55
+		'
+		>
 			<Container>
-				<Logo />
-				<div className='z-20 relative py-10'>
+				<Logo theme='light' />
+				<div className='z-20 relative py-10 xl:py-16'>
 					<h1
 						className='
-							text-gray-700 text-3xl font-bold mb-2
+							text-zinc-50 text-3xl font-extrabold mb-2 drop-shadow-2xl
 							md:text-5xl
 							xl:text-7xl xl:leading-tight
 					'
 					>
-						Encontre livros que <br /> sejam a sua cara!
+						Encontre livros que <br /> sejam a sua cara
 					</h1>
-					<p className='text-neutral-500 text-xl mb-10'>Lorem ipsum dolor sit amet.</p>
+					<p className='text-zinc-300 text-lg mb-10 drop-shadow-2xl xl:text-xl'>
+						Usamos IA para te dar as melhores recomendações!
+					</p>
 					<Button filled onClick={setSearchFocus}>
 						Pesquisar livros
 					</Button>
 				</div>
-				<div
-					className='
-						bg-float aspect-square bg-cover w-72 opacity-20 absolute bottom-0 right-0 z-10
-						sm:opacity-100 sm:w-80 lg:w-2/6
-				'
-				></div>
 			</Container>
 		</header>
 	)

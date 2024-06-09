@@ -5,7 +5,7 @@ import { Heading } from '../Heading/Heading'
 
 interface SectionBookListProps {
 	title: string
-	books: BookProps[] | string
+	books: BookProps[]
 }
 
 export function SectionBookList({ title, books }: SectionBookListProps) {
@@ -14,7 +14,7 @@ export function SectionBookList({ title, books }: SectionBookListProps) {
 			<section className='mb-11'>
 				<Heading title={title} />
 
-				{books && typeof books === 'object' && books.length > 0 ? (
+				{books && books.length > 0 ? (
 					<ul className='grid gap-3 mb-11 lg:grid-cols-2 lg:gap-5 xl:grid-cols-3'>
 						{books.map((book, index) => (
 							<li key={index} className='flex'>
@@ -24,13 +24,14 @@ export function SectionBookList({ title, books }: SectionBookListProps) {
 									title={book.title}
 									author={book.authors[0]}
 									category={book.categories[0]}
-									synopsis={book.shortDescription}
+									shortDescription={book.shortDescription}
+									longDescription={book.longDescription}
 								/>
 							</li>
 						))}
 					</ul>
 				) : (
-					<p>{typeof books === 'string' ? books : 'Nenhum livro encontrado.'}</p>
+					<p className='text-gray-500'>Nenhum livro encontrado.</p>
 				)}
 			</section>
 		</Container>

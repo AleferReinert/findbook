@@ -43,7 +43,7 @@ export function HomePage() {
 		async (e: React.FormEvent<HTMLFormElement>, search: string) => {
 			e.preventDefault()
 			setLoading(true)
-			setBooks('Pesquisando...')
+			setBooks([])
 			scrollToSearchElement()
 
 			const searchBooksPrompt = `
@@ -66,9 +66,9 @@ export function HomePage() {
 			<Header />
 			<Container>
 				<form className='mb-5' onSubmit={e => handleSubmit(e, search)}>
-					<Heading title='O que você quer ler hoje?' />
+					<Heading title='O que gostaria de ler?' />
 
-					<div className='flex gap-2 flex-wrap'>
+					<div className='flex gap-2 flex-wrap mb-10'>
 						{categories.sort().map((category, index) => (
 							<Button
 								key={index}
@@ -82,11 +82,11 @@ export function HomePage() {
 					</div>
 
 					<label
-						className='text-gray-700 font-bold text-xl pt-3 pb-5 mt-2 lg:mt-10 block'
+						className='text-gray-700 font-medium text-base-lg pt-3 pb-2 mt-2 lg:mt-10 block'
 						htmlFor='recommendation-field'
 						id='recommendation-label'
 					>
-						Sobre o que você gostaria de receber uma recomendação?
+						Pesquise no campo abaixo para ver as recomendações:
 					</label>
 
 					<Search placeholder='Eu gostaria de ler...' search={search} setSearch={setSearch} />

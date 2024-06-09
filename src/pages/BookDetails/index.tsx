@@ -20,12 +20,6 @@ export function BookDetailsPage() {
 		<>
 			<Container>
 				<Logo />
-				{/* <a
-					href='/'
-					className='block text-gray-700 font-bold text-xs mt-8 lg:mt-20 border-b border-slate-300 pb-4 mb-8 '
-				>
-					Voltar
-				</a> */}
 				{book ? (
 					<article className='my-8 grid gap-12 justify-between lg:mt-20 lg:grid-cols-3 lg:gap-8'>
 						<div className='lg:col-span-2'>
@@ -34,7 +28,7 @@ export function BookDetailsPage() {
 							</h1>
 
 							{book.authors && (
-								<h2 className='text-neutral-500 mt-3 text-xl lg:text-2xl'>{book.authors.join(', ')}</h2>
+								<h2 className='text-gray-500 mt-3 text-xl lg:text-2xl'>{book.authors.join(', ')}</h2>
 							)}
 
 							{book.categories && (
@@ -45,7 +39,7 @@ export function BookDetailsPage() {
 								</div>
 							)}
 
-							<p className='text-neutral-500 mt-5 text-base leading-7'>
+							<p className='text-gray-500 mt-5 text-base leading-7'>
 								{book.longDescription
 									? book.longDescription
 									: book.shortDescription || 'Descrição não disponível.'}

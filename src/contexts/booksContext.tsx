@@ -16,8 +16,8 @@ export interface BookProps {
 }
 
 interface BooksContextProps {
-	books: BookProps[] | string
-	setBooks: React.Dispatch<React.SetStateAction<BookProps[] | string>>
+	books: BookProps[]
+	setBooks: React.Dispatch<React.SetStateAction<BookProps[]>>
 }
 
 export const BooksContext = createContext({} as BooksContextProps)
@@ -27,7 +27,7 @@ interface BooksProviderProps {
 }
 
 export function BooksProvider({ children }: BooksProviderProps) {
-	const [books, setBooks] = useState<BookProps[] | string>([])
+	const [books, setBooks] = useState<BookProps[]>([])
 
 	return <BooksContext.Provider value={{ books, setBooks }}>{children}</BooksContext.Provider>
 }

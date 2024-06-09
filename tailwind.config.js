@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				header: `url('./src/assets/img/background-header.png')`,
+				header: `url('./src/assets/img/background-header.jpg')`,
 				float: `url('./src/assets/img/float-header.png')`
 			},
 			boxShadow: {
