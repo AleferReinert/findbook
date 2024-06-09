@@ -4,6 +4,7 @@ import { Button } from '../../components/Button/Button'
 import { Container } from '../../components/Container/Container'
 import { Header } from '../../components/Header/Header'
 import { Heading } from '../../components/Heading/Heading'
+import { Loading } from '../../components/Loading/Loading'
 import { Search } from '../../components/Search/Search'
 import { SectionBookList } from '../../components/SectionBookList/SectionBookList'
 import { BooksContext } from '../../contexts/booksContext'
@@ -15,6 +16,7 @@ export function HomePage() {
 	const [search, setSearch] = useState('')
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([])
 	const { books, setBooks } = useContext(BooksContext)
+	const [loading, setLoading] = useState(false)
 
 	const handleSelectCategories = useCallback(
 		(category: string) => {
@@ -40,6 +42,7 @@ export function HomePage() {
 	const handleSubmit = useCallback(
 		async (e: React.FormEvent<HTMLFormElement>, search: string) => {
 			e.preventDefault()
+			setLoading(true)
 			setBooks('Pesquisando...')
 			scrollToSearchElement()
 
@@ -49,13 +52,17 @@ export function HomePage() {
 			`
 			const response = await searchBooks(searchBooksPrompt)
 			setBooks(response)
-			setTimeout(() => scrollToSearchElement(), 50)
+			setTimeout(() => {
+				scrollToSearchElement(), 50
+				setLoading(false)
+			})
 		},
 		[selectedCategories, setBooks]
 	)
 
 	return (
 		<>
+			<Loading show={loading} />
 			<Header />
 			<Container>
 				<form className='mb-5' onSubmit={e => handleSubmit(e, search)}>
