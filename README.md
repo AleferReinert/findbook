@@ -1,6 +1,6 @@
 ## FindBook
 
-FindBook é uma aplicação web que usa inteligência artificial para recomendar livros a partir da busca do usuário.
+FindBook é uma aplicação web que utiliza inteligência artificial para recomendar livros a partir da busca do usuário.
 
 - Pesquise por livros, autores ou categorias
 - Receba recomendações através da IA
@@ -41,6 +41,10 @@ yarn dev
 - **TypeScript:** Um superconjunto do JavaScript que adiciona tipagem estática opcional.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.
 - **Tailwind CSS:** Um framework CSS baseado em utilitários.
+
+## Back-end
+
+Disponível em [github.com/AleferReinert/findbook-back-end](https://github.com/AleferReinert/findbook-back-end).
 
 ## Créditos
 
