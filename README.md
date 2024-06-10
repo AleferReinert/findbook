@@ -1,10 +1,9 @@
 ## FindBook
 
-FindBook é uma aplicação web para apaixonados por livros.
+FindBook é uma aplicação web que usa inteligência artificial para recomendar livros a partir da busca do usuário.
 
-- Navegue por categorias
-- Pesquise por livros
-- Receba recomendações
+- Pesquise por livros, autores ou categorias
+- Receba recomendações através da IA
 - Visualize informações detalhadas sobre cada livro
 
 ## Começando
