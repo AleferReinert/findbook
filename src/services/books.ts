@@ -1,8 +1,10 @@
 import axios from 'axios'
 
 export const searchBooks = async (input: string) => {
+	const url = import.meta.env.VITE_BASE_URL + '/books'
+
 	try {
-		const response = await axios.get(import.meta.env.VITE_BASE_URL + '/books', {
+		const response = await axios.get(url, {
 			params: {
 				search: input
 			}
@@ -10,6 +12,7 @@ export const searchBooks = async (input: string) => {
 
 		return response.data.data
 	} catch (error) {
+		console.log(url)
 		console.log('src/services/books.ts \n Error: ', error)
 		return null
 	}

@@ -19,7 +19,7 @@ git clone https://github.com/aleferreinert/findbook.git
 
 ```
 # .env
-VITE_BASE_URL = '<url_base>:3333'
+VITE_BASE_URL = '<ip>:3333'
 ```
 
 3. Instale as dependências:
