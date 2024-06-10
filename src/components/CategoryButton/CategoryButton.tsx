@@ -10,7 +10,7 @@ export function CategoryButton({ selected = false, onClick, ...props }: Category
 			type='button'
 			onClick={onClick}
 			className={
-				'font-medium py-2 transition outline-none text-sm px-5 border text-zinc-500 border-zinc-500 ' +
+				'font-medium py-2 transition outline-none text-sm px-5 border text-gray-600 border-gray-600 ' +
 				(selected &&
 					'bg-emerald-900 !text-zinc-100 border-emerald-900 hover:bg-emerald-900 hover:border-emerald-900')
 			}

@@ -39,7 +39,7 @@ export function BookDetailsPage() {
 								</div>
 							)}
 
-							<p className='text-gray-500 mt-5 text-base leading-7'>
+							<p className='text-gray-600 mt-5 text-base leading-7'>
 								{book.longDescription
 									? book.longDescription
 									: book.shortDescription || 'Descrição não disponível.'}
