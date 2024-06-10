@@ -31,7 +31,7 @@ export function SectionBookList({ title, books }: SectionBookListProps) {
 						))}
 					</ul>
 				) : (
-					<p className='text-gray-500'>Nenhum livro encontrado.</p>
+					<p className='text-gray-700'>Nenhum livro encontrado.</p>
 				)}
 			</section>
 		</Container>
