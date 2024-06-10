@@ -1,4 +1,3 @@
-import { Button } from '../Button/Button'
 import { Container } from '../Container/Container'
 import { Logo } from '../Logo/Logo'
 
@@ -32,9 +31,16 @@ export function Header() {
 					<p className='text-zinc-300 text-lg mb-10 drop-shadow-2xl xl:text-xl'>
 						Usamos IA para te dar as melhores recomendações!
 					</p>
-					<Button filled onClick={setSearchFocus}>
+					<button
+						onClick={setSearchFocus}
+						className='
+							font-medium border-emerald-500 py-2 transition outline-none 
+							bg-emerald-500 text-white text-xl px-7 border-2 
+							hover:bg-emerald-600 hover:border-emerald-600 
+						'
+					>
 						Pesquisar livros
-					</Button>
+					</button>
 				</div>
 			</Container>
 		</header>

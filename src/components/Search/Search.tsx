@@ -27,7 +27,7 @@ export const Search = forwardRef<HTMLInputElement, SearchProps>(
 				/>
 
 				<button type='submit' title='Pesquisar' className='absolute right-0 top-[1px] p-3 outline-none'>
-					<img src={searchIcon} width={24} height={24} />
+					<img src={searchIcon} width={24} height={24} alt='' />
 				</button>
 			</div>
 		)

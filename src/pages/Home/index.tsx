@@ -1,6 +1,6 @@
 import { useCallback, useContext, useState } from 'react'
 
-import { Button } from '../../components/Button/Button'
+import { CategoryButton } from '../../components/CategoryButton/CategoryButton'
 import { Container } from '../../components/Container/Container'
 import { Header } from '../../components/Header/Header'
 import { Heading } from '../../components/Heading/Heading'
@@ -70,14 +70,13 @@ export function HomePage() {
 
 					<div className='flex gap-2 flex-wrap mb-10'>
 						{categories.sort().map((category, index) => (
-							<Button
+							<CategoryButton
 								key={index}
-								size='small'
 								selected={selectedCategories.includes(category)}
 								onClick={() => handleSelectCategories(category)}
 							>
 								{category}
-							</Button>
+							</CategoryButton>
 						))}
 					</div>
 
