@@ -10,7 +10,7 @@ export function Logo({ theme = 'dark' }: LogoProps) {
 			to='/'
 			className={`
 					${theme === 'light' ? 'text-zinc-300 ' : 'text-gray-80 '}
-					font-extralight text-xl pt-4 inline-block relative outline-non
+					font-extralight text-xl pt-4 inline-block relative outline-none
 				`}
 		>
 			Find
