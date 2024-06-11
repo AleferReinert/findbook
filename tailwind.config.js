@@ -5,7 +5,8 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				header: `url('assets/img/background-header.webp')`
+				'header-mobile': `url('assets/img/background-header-mobile.webp')`,
+				'header-desktop': `url('assets/img/background-header-desktop.webp')`
 			},
 			boxShadow: {
 				default: '0 0 15px rgba(0,0,0,0.19)',
