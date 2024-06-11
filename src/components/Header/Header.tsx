@@ -14,7 +14,7 @@ export function Header() {
 			className='
 			bg-header-mobile bg-center bg-cover bg-no-repeat relative 
 			before:absolute before:inset-0 before:bg-black/55
-			md:bg-header-desktop
+			sm:bg-header-desktop
 		'
 		>
 			<Container>
