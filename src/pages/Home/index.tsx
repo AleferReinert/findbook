@@ -10,7 +10,17 @@ import { SectionBookList } from '../../components/SectionBookList/SectionBookLis
 import { BooksContext } from '../../contexts/booksContext'
 import { searchBooks } from '../../services/books'
 
-const categories = ['Comédia', 'Drama', 'Romance', 'Suspense', 'Autoajuda']
+const categories = [
+	'Drama',
+	'Ficção',
+	'Mistério',
+	'Programação',
+	'Psicologia',
+	'Romance',
+	'Saúde Mental',
+	'Suspense',
+	'Thriller'
+]
 
 export function HomePage() {
 	const [search, setSearch] = useState('')
