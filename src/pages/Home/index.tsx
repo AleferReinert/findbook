@@ -11,6 +11,7 @@ import { BooksContext } from '../../contexts/booksContext'
 import { searchBooks } from '../../services/books'
 
 const categories = [
+	'Autoajuda',
 	'Drama',
 	'Ficção',
 	'Mistério',
@@ -43,8 +44,8 @@ export function HomePage() {
 
 	// Rola a página para a posição da pesquisa após fazer a busca e após o resultado ser carregado
 	const scrollToSearchElement = () => {
-		const recommendationLabel = document.getElementById('recommendation-label')
-		recommendationLabel?.scrollIntoView({
+		window.scrollTo({
+			top: document.getElementById('recommendation-label')!.offsetTop - 16,
 			behavior: 'smooth'
 		})
 	}
@@ -75,33 +76,30 @@ export function HomePage() {
 			<Loading show={loading} />
 			<Header />
 			<Container>
-				<form className='mb-5' onSubmit={e => handleSubmit(e, search)}>
-					<Heading title='O que gostaria de ler?' />
+				<form
+					className='mt-10 flex flex-col gap-10 sm:mt-12 sm:gap-12 lg:mt-14 lg:gap-14'
+					onSubmit={e => handleSubmit(e, search)}
+				>
+					<div>
+						<Heading title='O que gostaria de ler?' as='h2' lineBottom />
 
-					<div className='flex gap-2 flex-wrap mb-10'>
-						{categories.sort().map((category, index) => (
-							<CategoryButton
-								key={index}
-								selected={selectedCategories.includes(category)}
-								onClick={() => handleSelectCategories(category)}
-							>
-								{category}
-							</CategoryButton>
-						))}
+						<div className='flex gap-2 flex-wrap mt-6'>
+							{categories.sort().map((category, index) => (
+								<CategoryButton
+									key={index}
+									selected={selectedCategories.includes(category)}
+									onClick={() => handleSelectCategories(category)}
+								>
+									{category}
+								</CategoryButton>
+							))}
+						</div>
 					</div>
 
-					<label
-						className='text-gray-700 font-medium text-base-lg pt-3 pb-2 mt-2 lg:mt-10 block'
-						htmlFor='recommendation-field'
-						id='recommendation-label'
-					>
-						Pesquise no campo abaixo para ver as recomendações:
-					</label>
-
 					<Search placeholder='Eu gostaria de ler...' search={search} setSearch={setSearch} />
+					<SectionBookList title='Recomendados' books={books} />
 				</form>
 			</Container>
-			<SectionBookList title='Recomendados' books={books} />
 		</>
 	)
 }

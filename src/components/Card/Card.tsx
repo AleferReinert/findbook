@@ -27,10 +27,10 @@ export default function Card({
 		<Link
 			to={`/${id}`}
 			title='Ver detalhes'
-			className='text-left bg-white p-3 gap-3 grid grid-cols-[35%_auto] w-full sm:p-5 md:gap-4'
+			className='text-left bg-white p-3 gap-3 w-full grid grid-cols-[max-content_auto] sm:p-5 md:gap-4'
 		>
-			<div className='flex items-center lg:items-start'>
-				<img src={image} alt='Book cover' className='bg-slate-100 text-center mx-auto w-full max-h-min' />
+			<div className='w-24 flex items-center lg:items-start'>
+				<img src={image} alt='Book cover' className='bg-slate-100 text-center mx-auto w-full' />
 			</div>
 			<div className='flex justify-between flex-col'>
 				<div>

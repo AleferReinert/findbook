@@ -5,7 +5,11 @@ export function Header() {
 	function setSearchFocus() {
 		const label = document.getElementById('recommendation-label')
 		const input = document.getElementById('recommendation-field')
-		label?.scrollIntoView({ behavior: 'smooth' })
+
+		window.scrollTo({
+			top: label!.offsetTop - 16,
+			behavior: 'smooth'
+		})
 		setTimeout(() => input?.focus(), 200)
 	}
 
@@ -23,6 +27,7 @@ export function Header() {
 					<h1
 						className='
 							text-zinc-50 text-3xl font-extrabold mb-2 drop-shadow-2xl
+							sm:text-4xl
 							md:text-5xl
 							xl:text-7xl xl:leading-tight
 					'
