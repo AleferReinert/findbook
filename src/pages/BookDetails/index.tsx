@@ -15,6 +15,7 @@ export function BookDetailsPage() {
 	useEffect(() => {
 		const findBook = books.find(book => book._id === id)
 		setBook(findBook)
+		if (findBook) document.title = findBook.title
 	}, [books, id])
 
 	return (

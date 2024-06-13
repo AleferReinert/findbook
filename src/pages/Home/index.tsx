@@ -11,6 +11,7 @@ import { BooksContext } from '../../contexts/booksContext'
 import { searchBooks } from '../../services/books'
 
 const categories = [
+	'Aventura',
 	'Autoajuda',
 	'Drama',
 	'Ficção',
@@ -28,6 +29,7 @@ export function HomePage() {
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([])
 	const { books, setBooks } = useContext(BooksContext)
 	const [loading, setLoading] = useState(false)
+	document.title = 'FindBook - Encontre livros que sejam a sua cara'
 
 	const handleSelectCategories = useCallback(
 		(category: string) => {
