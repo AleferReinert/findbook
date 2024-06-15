@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { BookProps } from '../../contexts/booksContext'
 import Card from '../Card/Card'
 import { Heading } from '../Heading/Heading'
@@ -8,6 +9,18 @@ interface SectionBookListProps {
 }
 
 export function SectionBookList({ title, books }: SectionBookListProps) {
+	const [isFirstRender, setIsFirstRender] = useState(true)
+	const [emptyMessage, setEmptyMessage] = useState('Pesquise livros e eles aparecerão aqui.')
+
+	useEffect(() => {
+		if (isFirstRender) {
+			setIsFirstRender(false)
+		} else {
+			setEmptyMessage('Nenhum livro encontrado.')
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [])
+
 	return (
 		<div className='mb-6'>
 			<Heading title={title} as='h3' />
@@ -29,7 +42,7 @@ export function SectionBookList({ title, books }: SectionBookListProps) {
 					))}
 				</ul>
 			) : (
-				<p className='text-gray-700 mt-4'>Nenhum livro encontrado.</p>
+				<p className='text-gray-700 mt-4'>{emptyMessage}</p>
 			)}
 		</div>
 	)

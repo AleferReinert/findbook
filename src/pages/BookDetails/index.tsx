@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Container } from '../../components/Container/Container'
@@ -31,15 +32,15 @@ export function BookDetailsPage() {
 
 						{book.categories && (
 							<div className='flex gap-2 mb-4'>
-								{book.categories.map((category, index) => (
+								{book.categories.sort().map((category, index) => (
 									<CategoryTag key={index} title={category} size='normal' />
 								))}
 							</div>
 						)}
 
-						<div className='sm:grid sm:grid-cols-[auto_max-content] sm:gap-10'>
+						<div className='md:grid md:grid-cols-[auto_max-content] md:gap-10'>
 							{book.thumbnailUrl && (
-								<div className='sm:order-2'>
+								<div className='md:order-2'>
 									<img
 										src={book.thumbnailUrl}
 										alt='Book Cover'
@@ -49,11 +50,29 @@ export function BookDetailsPage() {
 									/>
 								</div>
 							)}
-							<p className='text-gray-600 mt-5 text-base leading-7 sm:mt-0'>
-								{book.longDescription
-									? book.longDescription
-									: book.shortDescription || 'Descrição não disponível.'}
-							</p>
+							<div className='md:flex md:flex-col md:justify-between'>
+								<p className='text-gray-600 mt-5 mb-3 text-base leading-7 md:mt-0'>
+									{book.longDescription
+										? book.longDescription
+										: book.shortDescription || 'Descrição não disponível.'}
+								</p>
+								<table className='text-gray-600 text-left w-full text-sm'>
+									<tbody className='[&_th]:font-medium odd:[&_>tr]:bg-slate-200/50 [&_>tr>*]:py-3 [&_>tr>*]:px-3'>
+										<tr>
+											<th>Data da publicação:</th>
+											<td>{dayjs(book.publishedDate.$date).format('DD/MM/YYYY')}</td>
+										</tr>
+										<tr>
+											<th>Páginas:</th>
+											<td>{book.pageCount}</td>
+										</tr>
+										<tr>
+											<th>ISBN:</th>
+											<td>{book.isbn}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</article>
 				) : (
