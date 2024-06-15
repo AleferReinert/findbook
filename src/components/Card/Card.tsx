@@ -34,7 +34,9 @@ export default function Card({
 			</div>
 			<div className='flex justify-between flex-col'>
 				<div>
-					<h3 className='text-base sm:text-xl text-gray-700 font-bold'>{title}</h3>
+					<h3 className='text-base sm:text-xl text-gray-700 font-bold line-clamp-2' title={title}>
+						{title}
+					</h3>
 					{author && <p className='text-xs text-gray-500'>{author}</p>}
 					{category && <CategoryTag title={category} />}
 					<p className='text-gray-500 text-sm mb-4 leading-[1.15rem]'>

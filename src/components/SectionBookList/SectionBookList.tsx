@@ -10,7 +10,7 @@ interface SectionBookListProps {
 
 export function SectionBookList({ title, books }: SectionBookListProps) {
 	const [isFirstRender, setIsFirstRender] = useState(true)
-	const [emptyMessage, setEmptyMessage] = useState('Pesquise livros e eles aparecerão aqui.')
+	const [emptyMessage, setEmptyMessage] = useState('Faça uma pesquisa e suas recomendações aparecerão aqui.')
 
 	useEffect(() => {
 		if (isFirstRender) {

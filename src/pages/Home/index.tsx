@@ -13,6 +13,7 @@ import { searchBooks } from '../../services/books'
 const categories = [
 	'Aventura',
 	'Autoajuda',
+	'Espiritualidade',
 	'Drama',
 	'Ficção',
 	'Mistério',
@@ -21,6 +22,7 @@ const categories = [
 	'Romance',
 	'Saúde Mental',
 	'Suspense',
+	'Terror',
 	'Thriller'
 ]
 
@@ -28,6 +30,7 @@ export function HomePage() {
 	const [search, setSearch] = useState('')
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([])
 	const { books, setBooks } = useContext(BooksContext)
+	// const [popularBooks, setPopularBooks] = useState<BookProps[]>([])
 	const [loading, setLoading] = useState(false)
 	document.title = 'FindBook - Encontre livros que sejam a sua cara'
 
@@ -44,6 +47,20 @@ export function HomePage() {
 		[selectedCategories]
 	)
 
+	// Livros mais populares para não carregar página vazia
+	// useEffect(() => {
+	// 	const fetchBooks = async () => {
+	// 		const searchBooksPrompt = `
+	//       1. Solicitação do usuário: livros mais populares no momento.
+	//       2. Categorias que o usuário deseja: qualquer uma.
+	//     `
+	// 		const response = await searchBooks(searchBooksPrompt)
+	// 		setPopularBooks(response)
+	// 	}
+
+	// 	fetchBooks()
+	// }, [])
+
 	// Rola a página para a posição da pesquisa após fazer a busca e após o resultado ser carregado
 	const scrollToSearchElement = () => {
 		window.scrollTo({
@@ -59,11 +76,19 @@ export function HomePage() {
 			setBooks([])
 			scrollToSearchElement()
 
-			const searchBooksPrompt = `
-			1. Solicitação do usuário: ${search}.
-			2. Categorias que o usuário deseja:  ${selectedCategories.length ? selectedCategories : 'qualquer uma'}.
-			`
-			const response = await searchBooks(searchBooksPrompt)
+			const searchBooksPrompt = () => {
+				if (!search && selectedCategories.length === 0) {
+					alert('Digite uma busca ou selecione uma categoria.')
+				}
+
+				const prompt =
+					(search ? `${search}.` : '') +
+					(selectedCategories.length > 0
+						? `Retorne livros das seguintes categorias categorias:  ${selectedCategories}`
+						: '')
+				return prompt
+			}
+			const response = await searchBooks(searchBooksPrompt())
 			setBooks(response)
 			setTimeout(() => {
 				scrollToSearchElement(), 50
@@ -100,6 +125,7 @@ export function HomePage() {
 
 					<Search placeholder='Eu gostaria de ler...' search={search} setSearch={setSearch} />
 					<SectionBookList title='Recomendados' books={books} />
+					{/* {popularBooks.length > 0 && <SectionBookList title='Populares' books={popularBooks} />} */}
 				</form>
 			</Container>
 		</>

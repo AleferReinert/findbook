@@ -12,7 +12,6 @@ export const searchBooks = async (input: string) => {
 
 		return response.data.data
 	} catch (error) {
-		console.log(url)
 		console.log('src/services/books.ts \n Error: ', error)
 		return null
 	}
