@@ -34,7 +34,7 @@ export function SectionBookList({ title, books }: SectionBookListProps) {
 								image={book.thumbnailUrl}
 								title={book.title}
 								author={book.authors[0]}
-								category={book.categories[0]}
+								categories={book.categories}
 								shortDescription={book.shortDescription}
 								longDescription={book.longDescription}
 							/>

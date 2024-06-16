@@ -72,19 +72,21 @@ export function HomePage() {
 	const handleSubmit = useCallback(
 		async (e: React.FormEvent<HTMLFormElement>, search: string) => {
 			e.preventDefault()
+			const emptySearch = !search && selectedCategories.length === 0
+			if (emptySearch) {
+				alert('Digite uma busca ou selecione uma categoria.')
+				return null
+			}
+
 			setLoading(true)
 			setBooks([])
 			scrollToSearchElement()
 
 			const searchBooksPrompt = () => {
-				if (!search && selectedCategories.length === 0) {
-					alert('Digite uma busca ou selecione uma categoria.')
-				}
-
 				const prompt =
 					(search ? `${search}.` : '') +
 					(selectedCategories.length > 0
-						? `Retorne livros das seguintes categorias categorias:  ${selectedCategories}`
+						? `Retorne livros das seguintes categorias:  ${selectedCategories}`
 						: '')
 				return prompt
 			}

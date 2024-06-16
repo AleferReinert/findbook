@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	font-family: 'Plus Jakarta Sans';
+body {
+	font-family: 'Plus Jakarta Sans', 'sans-serif';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-weight: 300;

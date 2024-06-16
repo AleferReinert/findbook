@@ -1,11 +1,11 @@
 import dayjs from 'dayjs'
 import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { CategoryTags } from '../../components/CategoryTags/CategoryTags'
 import { Container } from '../../components/Container/Container'
 import { Heading } from '../../components/Heading/Heading'
 import { Logo } from '../../components/Logo/Logo'
 import { SectionBookList } from '../../components/SectionBookList/SectionBookList'
-import { CategoryTag } from '../../components/Tag/Tag'
 import { BookProps, BooksContext } from '../../contexts/booksContext'
 
 export function BookDetailsPage() {
@@ -30,13 +30,7 @@ export function BookDetailsPage() {
 							<h2 className='text-gray-500 mt-3 text-xl lg:text-2xl'>{book.authors.join(', ')}</h2>
 						)}
 
-						{book.categories && (
-							<div className='flex gap-2 mb-4'>
-								{book.categories.sort().map((category, index) => (
-									<CategoryTag key={index} title={category} size='normal' />
-								))}
-							</div>
-						)}
+						{book.categories && <CategoryTags categories={book.categories} size='normal' />}
 
 						<div className='md:grid md:grid-cols-[auto_max-content] md:gap-10'>
 							{book.thumbnailUrl && (
@@ -44,8 +38,6 @@ export function BookDetailsPage() {
 									<img
 										src={book.thumbnailUrl}
 										alt='Book Cover'
-										// width='412'
-										// height='583'
 										className='bg-slate-100 text-center mx-auto w-56 lg:w-72'
 									/>
 								</div>

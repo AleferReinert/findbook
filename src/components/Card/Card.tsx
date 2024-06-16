@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { truncate } from '../../utils/truncate'
-import { CategoryTag } from '../Tag/Tag'
+import { CategoryTags } from '../CategoryTags/CategoryTags'
 
 interface CardProps {
 	id: string
 	image: string
 	title: string
 	author: string
-	category: string
+	categories: string[]
 	shortDescription: string
 	longDescription: string
 }
@@ -17,7 +17,7 @@ export default function Card({
 	image,
 	title,
 	author,
-	category,
+	categories,
 	shortDescription,
 	longDescription
 }: CardProps) {
@@ -38,7 +38,7 @@ export default function Card({
 						{title}
 					</h3>
 					{author && <p className='text-xs text-gray-500'>{author}</p>}
-					{category && <CategoryTag title={category} />}
+					{categories && <CategoryTags categories={categories} />}
 					<p className='text-gray-500 text-sm mb-4 leading-[1.15rem]'>
 						{truncate(synopsis, 80) || 'Sinopse não disponível.'}
 					</p>
