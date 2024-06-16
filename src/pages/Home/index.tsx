@@ -1,5 +1,6 @@
 import { useCallback, useContext, useState } from 'react'
 
+import Alert from '../../components/Alert/Alert'
 import { CategoryButton } from '../../components/CategoryButton/CategoryButton'
 import { Container } from '../../components/Container/Container'
 import { Header } from '../../components/Header/Header'
@@ -32,6 +33,7 @@ export function HomePage() {
 	const { books, setBooks } = useContext(BooksContext)
 	// const [popularBooks, setPopularBooks] = useState<BookProps[]>([])
 	const [loading, setLoading] = useState(false)
+	const [openAlert, setOpenAlert] = useState(false)
 	document.title = 'FindBook - Encontre livros que sejam a sua cara'
 
 	const handleSelectCategories = useCallback(
@@ -74,7 +76,10 @@ export function HomePage() {
 			e.preventDefault()
 			const emptySearch = !search && selectedCategories.length === 0
 			if (emptySearch) {
-				alert('Digite uma busca ou selecione uma categoria.')
+				setOpenAlert(true)
+				setTimeout(() => {
+					setOpenAlert(false)
+				}, 3000)
 				return null
 			}
 
@@ -102,6 +107,12 @@ export function HomePage() {
 
 	return (
 		<>
+			<Alert
+				openAlert={openAlert}
+				setOpenAlert={setOpenAlert}
+				title='Erro ao buscar :('
+				message='Digite uma busca ou selecione uma categoria.'
+			/>
 			<Loading show={loading} />
 			<Header />
 			<Container>

@@ -41,6 +41,7 @@ yarn dev
 - **TypeScript:** Um superconjunto do JavaScript que adiciona tipagem estática opcional.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.
 - **Tailwind CSS:** Um framework CSS baseado em utilitários.
+- **Radix UI:** Uma biblioteca de componentes acessíveis e personalizáveis para a web.
 
 ## Back-end
 
