@@ -32,10 +32,10 @@ export function Header() {
 							xl:text-7xl xl:leading-tight
 					'
 					>
-						Encontre livros que <br /> sejam a sua cara
+						Encontre livros que <br /> sejam a sua cara!
 					</h1>
 					<p className='text-zinc-300 text-lg mb-10 drop-shadow-2xl xl:text-xl'>
-						Usamos IA para te dar as melhores recomendações!
+						Usamos IA para te dar as melhores recomendações.
 					</p>
 					<button
 						onClick={setSearchFocus}

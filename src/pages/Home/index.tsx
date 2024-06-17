@@ -34,7 +34,7 @@ export function HomePage() {
 	// const [popularBooks, setPopularBooks] = useState<BookProps[]>([])
 	const [loading, setLoading] = useState(false)
 	const [openAlert, setOpenAlert] = useState(false)
-	document.title = 'FindBook - Encontre livros que sejam a sua cara'
+	document.title = 'FindBook - Encontre livros que sejam a sua cara!'
 
 	const handleSelectCategories = useCallback(
 		(category: string) => {
