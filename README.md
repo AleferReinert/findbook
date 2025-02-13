@@ -14,12 +14,7 @@ FindBook é uma aplicação web que utiliza inteligência artificial para recome
 git clone https://github.com/aleferreinert/findbook.git
 ```
 
-2. Crie as variáveis de ambiente:
-
-```
-# .env
-VITE_BASE_URL = '<ip>:3333'
-```
+2. Crie as variáveis de ambiente como em .env.example.
 
 3. Instale as dependências:
 
@@ -47,8 +42,8 @@ yarn dev
 
 Disponível em [github.com/AleferReinert/findbook-back-end](https://github.com/AleferReinert/findbook-back-end).
 
-
 ## URL do Projeto
+
 Explore o projeto no link: [FindBook](https://findbook-ar.netlify.app).
 
 ## Créditos
