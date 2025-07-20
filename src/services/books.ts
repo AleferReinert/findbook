@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const searchBooks = async (input: string) => {
-	const url = import.meta.env.VITE_BASE_URL + '/books'
+	const url = import.meta.env.VITE_API_URL + '/books'
 
 	try {
 		const response = await axios.get(url, {
